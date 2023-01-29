@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naturalidade</title>
+    <style>
+        div#resp{
+            margin-top: 20pt;
+        }
+        div#resp2{
+            background: rgb(174, 219, 174);
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificador de Naturalidade</h1>
+    Informe seu país de nascimento: <input type="text" id="nasc">
+    <input type="button" value="Selecionar" onclick="verificar()">
+    <div id="resp"></div>
+    <div id="resp2"></div>
+    <script>
+        function verificar() {
+            var pais= window.document.querySelector('input#nasc').value
+            // var pais = nasc.value
+            var res = document.querySelector('div#resp')
+            var res2 = document.querySelector('div#resp2')
+            res.innerHTML = `<p>Verificado. Seu país de nascimento é <strong>${pais.toUpperCase()}</strong>.</p>`
+            if (pais.toLowerCase() == 'brasil'){
+                res2.innerHTML += `<p>Aqui no Brasil você é <strong>Brasileiro</strong>!</p>`
+            } else {
+                res2.innerHTML += `<p>Aqui no Brasil você é <strong>Estrangeiro</strong>!</p>`
+            }
+        }
+    </script>
+    
+</body>
+</html>
